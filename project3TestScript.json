@@ -21,49 +21,6 @@
     {
       "name": "login not registered",
       "flow": [
-        {"post": {
-          "url": "/login",
-          "json": {"username":"{{{ username }}}","password":"{{ password }}"},
-          "match":{
-            "json":"$.message",
-            "value":"There seems to be an issue with the username/password combination that you entered"
-          }
-         }
-       },
-       {"post": {
-         "url": "/registerUser",
-         "json": {"fname":"{{{fname}}}", "lname":"{{lname}}", "address":"{{{address}}}","city":"{{{city}}}","state":"{{{state}}}", "zip":"{{{zip}}}", "email":"{{{email}}}","username":"{{{ username }}}","password":"{{ password }}"},
-         "match":{
-           "json":"$.message",
-           "value":"{{{fname}}} was registered successfully"
-         }
-        }
-      },
-      {"post": {
-          "url": "/login",
-          "json": {"username":"{{{username}}}","password":"{{{password}}}"},
-          "match":{
-            "json":"$.message",
-            "value":"Welcome {{{fname}}}"
-          }
-         }
-       },
-       {"post": {
-         "url": "/viewUsers",
-         "match":{
-           "json":"$.message",
-           "value":"You must be an admin to perform this action"
-         }
-        }
-      },
-      {"post": {
-        "url": "/logout",
-        "match":{
-          "json":"$.message",
-          "value":"You have been successfully logged out"
-        }
-       }
-     },
      {"post": {
          "url": "/login",
          "json": {"username":"jadmin","password":"admin"},
@@ -82,15 +39,6 @@
         }
        }
      },
-     {"post": {
-       "url": "/modifyProduct",
-       "json": {"asin":"{{{asin}}}", "productName":"Sound of Music", "productDescription":"{{{productDescription}}}","group":"{{{group}}}"},
-       "match":{
-         "json":"$.message",
-         "value":"Sound of Music was successfully updated"
-       }
-      }
-    },
     {"post": {
       "url": "/viewProducts",
       "json": {"keyword":"Sound", "group":"{{group}}"},
@@ -99,7 +47,15 @@
         "value":"Sound of Music"
       }
      }
-    }
+    },
+   {"post": {
+        "url": "/logout",
+        "match":{
+          "json":"$.message",
+          "value":"You have been successfully logged out"
+        }
+       }
+     }
      ]
     }
   ]
