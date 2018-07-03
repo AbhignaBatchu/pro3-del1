@@ -50,7 +50,7 @@ lineReader.eachLine('./projectRecordsJSON.json', function(line, last) {
     if(jsonRecord.description == null){
       jsonRecord.description = "";
     }
-    values += `('${jsonRecord.title}', '${jsonRecord.categories[0]}', '${jsonRecord.description} ', '${jsonRecord.asin}')`;
+    values += `('${jsonRecord.asin}', '${jsonRecord.productName}', '${jsonRecord.productDescription} ', '${jsonRecord.groups}')`;
     numRecords++;
 
 //Change the query to align with your schema
