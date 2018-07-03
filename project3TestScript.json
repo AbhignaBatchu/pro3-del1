@@ -1,8 +1,8 @@
 {
   "config": {
-    "target": "http://54.86.100.74:4000",
+    "target": "http://35.172.222.40:4000",
     "phases": [
-      {"duration": 10, "arrivalCount": 10}
+      {"duration": 10, "arrivalCount": 100}
     ],
     "payload": [
     {
