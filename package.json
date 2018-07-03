@@ -1,0 +1,20 @@
+{
+  "name": "nodejsprac3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jsonToDBReader.js",
+  "dependencies": {
+    "co": "^4.6.0",
+    "co-mysql": "^1.0.0",
+    "line-reader": "^0.4.0",
+    "mysql": "^2.15.0",
+    "package.json": "^2.0.1",
+    "wrapper": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
