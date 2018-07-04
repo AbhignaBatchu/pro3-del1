@@ -81,7 +81,26 @@
           "value":"{{{productName}}} was successfully added to the system"
         }
        }
+     },
+    {"post": {
+      "url": "/viewProducts",
+      "json": {"keyword":"Sound", "group":"{{group}}"},
+      "match":{
+        "json":"$.product[*].productName",
+        "value":"Sound of Music"
+      }
      }
+    }
+	,
+     {"post": {
+       "url": "/modifyProduct",
+       "json": {"asin":"{{{asin}}}", "productName":"Sound of Music", "productDescription":"{{{productDescription}}}","group":"{{{group}}}"},
+       "match":{
+         "json":"$.message",
+         "value":"Sound of Music was successfully updated"
+       }
+      }
+    }
      ]
     }
   ]
