@@ -176,7 +176,9 @@ app.post('/updateInfo', function(req,res){
               qupdate = qupdate + " WHERE username='" +req.session.username+"';";
               console.log(qupdate);
               con.query(qupdate, function(err,rows){
-                if(err) throw err;
+                if(err){
+		res.json({'message':'The input you provided is not valid'});
+		}
                 console.log(rows.affectedRows + " record(s) updated");
               });
 
@@ -206,7 +208,9 @@ app.post('/updateInfo', function(req,res){
             }
             else{
               con.query("insert into products values (?,?,?,?)", [id,pname,pdescription,pgroup], function(err,rows){
-                if(err) throw err;
+                if(err){
+		res.json({'message':'The input you provided is not valid'});
+		}
                 else{
                   res.json({"message":pname+" was successfully added to the system"});
                 }
@@ -263,7 +267,9 @@ app.post('/updateInfo', function(req,res){
             console.log(qupdate);
             qupdate = mysql.format(qupdate);
             con.query(qupdate, function(err,rows){
-              if(err) throw err;
+              if(err){
+	       res.json({'message':'The input you provided is not valid'});
+	      }
               else{
                 console.log(rows.affectedRows + " record(s) updated");
                 //var name = JSON.stringify(pname);
