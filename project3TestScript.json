@@ -90,15 +90,6 @@
          "value":"Sound of Music was successfully updated"
        }
       }
-    },
-    {"post": {
-      "url": "/viewProducts",
-      "json": {"keyword":"Sound", "group":"{{group}}"},
-      "match":{
-        "json":"$.product[*].productName",
-        "value":"Sound of Music"
-      }
-     }
     }
      ]
     }
