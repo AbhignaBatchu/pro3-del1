@@ -60,7 +60,9 @@ else{
     var ucity = stripchar.RSExceptUnsAlpNum(city);
   }
     con.query('insert into reguser values (?,?,?,?,?,?,?,?,?,?)', [fname, lname, address, ucity, state, zip, email, username, password, role], function(err, rows){
-      if(err) throw err;
+      if(err) {
+      res.json({'message':'The input you provided is not valid'});
+      }
       else{
          res.json({'message':fname+' was registered successfully'});
       }
@@ -152,7 +154,9 @@ app.post('/updateInfo', function(req,res){
               if(username1){
                 var check = "select * from reguser where username = ?";
                 con.query(check, [username1], function(err,rows){
-                  if(err) throw err;
+                  if(err) {
+		  res.json({'message':'The input you provided is not valid'});
+		  }
 
                   if(rows.length>=1){
                      res.json({'message':'The input you provided is not valid'});
