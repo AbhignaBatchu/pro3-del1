@@ -389,7 +389,7 @@ app.post('/updateInfo', function(req,res){
         }
 });
 
-
+app.timeout=0;
 app.listen(9000, function(){
   console.log('Listening to port 9000');
 });
