@@ -85,10 +85,6 @@
     {"post": {
       "url": "/viewProducts",
       "json": {"keyword":"Sound", "group":"{{group}}"},
-      "match":{
-        "json":"$.product[*].productName",
-        "value":"{{{productName}}}"
-      }
      }
     }
      ]
