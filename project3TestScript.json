@@ -87,19 +87,9 @@
       "json": {"keyword":"Sound", "group":"{{group}}"},
       "match":{
         "json":"$.product[*].productName",
-        "value":"Sound of Music"
+        "value":"{{{productName}}}"
       }
      }
-    }
-	,
-     {"post": {
-       "url": "/modifyProduct",
-       "json": {"asin":"{{{asin}}}", "productName":"Sound of Music", "productDescription":"{{{productDescription}}}","group":"{{{group}}}"},
-       "match":{
-         "json":"$.message",
-         "value":"Sound of Music was successfully updated"
-       }
-      }
     }
      ]
     }
