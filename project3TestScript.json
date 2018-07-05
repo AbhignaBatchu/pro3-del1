@@ -1,8 +1,8 @@
 {
   "config": {
-    "target": "http://54.224.218.47:9000",
+    "target": "http://34.201.120.50:9000",
     "phases": [
-      {"duration": 10, "arrivalCount": 100}
+      {"duration": 10, "arrivalCount": 10}
     ],
     "payload": [
     {
