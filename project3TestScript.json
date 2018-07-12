@@ -21,6 +21,33 @@
     {
       "name": "login not registered",
       "flow": [
+        {"post": {
+          "url": "/login",
+          "json": {"username":"{{{username}}}","password":"{{{password}}}"},
+          "match":{
+            "json":"$.message",
+            "value":"Welcome {{{fname}}}"
+          }
+         }
+       },
+        {"post": {
+        "url": "/logout",
+        "match":{
+          "json":"$.message",
+          "value":"You have been successfully logged out"
+        }
+       }
+     },
+        {"post": {
+         "url": "/login",
+         "json": {"username":"jadmin","password":"admin"},
+         "match":{
+           "json":"$.message",
+           "value":"Welcome Jenny"
+         }
+        }
+      },
+        
      {"post": {
        "url": "/modifyProduct",
        "json": {"asin":"{{{asin}}}", "productName":"Sound of Music", "productDescription":"{{{productDescription}}}","group":"{{{group}}}"},
