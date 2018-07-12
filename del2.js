@@ -40,7 +40,7 @@ var pool = mysql.createPool({
   database: "edissdb2"
 });
 */
-con.connect(function(err){
+/*con.connect(function(err){
   if(err){
     res.json({'message':'You have connection problem'});
   }
@@ -49,7 +49,7 @@ con.connect(function(err){
   }
 
 });
-
+*/
 app.post('/registerUser', function(req,res){
 
   var fname = req.body.fname;
