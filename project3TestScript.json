@@ -2,7 +2,7 @@
   "config": {
     "target": "http://54.89.169.176:9000",
     "phases": [
-      {"duration": 20, "arrivalCount": 40}
+      {"duration": 20, "arrivalCount": 60}
     ],
     "payload": [
     {
