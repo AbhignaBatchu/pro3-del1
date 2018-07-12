@@ -86,9 +86,9 @@ else{
       }
 });
   }
-}); 
+}); con.release();
 		});
-		con.release();
+		
 	
 });
 
@@ -117,9 +117,9 @@ con.query("select * from reguser where username=? and password=?",[username,pass
        res.json({'message':'There seems to be an issue with the username/password combination that you entered'});
   }
 });
-
+con.release();
 	});
-	con.release();
+	
 });
 
 
@@ -136,9 +136,9 @@ app.post('/logout', function(req,res){
   	{
   		res.json({'message':'You are not currently logged in'});
   	}
-	
-	});
 	con.release();
+	});
+	
 });
 
 app.post('/updateInfo', function(req,res){
@@ -219,9 +219,10 @@ app.post('/updateInfo', function(req,res){
       else{
         	res.json({'message':'You are not currently logged in'});
       }
-	});
+con.release();	
+  });
 	
-	  con.release();
+	  
     });
 
 
@@ -263,9 +264,9 @@ app.post('/updateInfo', function(req,res){
       else{
         res.json({'message':'You are not currently logged in'});
       }
-	
+	con.release();
 	});
-	      con.release();
+	      
     });
 	
 	
@@ -337,9 +338,9 @@ app.post('/updateInfo', function(req,res){
     else{
       res.json({'message':'You are not currently logged in'});
     }
-	
+	con.release();
 	});
-	    con.release();
+	    
     });
 
     app.post('/viewUsers', function(req,res){
@@ -405,9 +406,9 @@ app.post('/updateInfo', function(req,res){
       else{
         res.json({'message':'You are not currently logged in'});
       }
-	  
+	  con.release();
 	});
-	    con.release();
+	    
 
     });
 
@@ -459,9 +460,10 @@ app.post('/updateInfo', function(req,res){
             }
           });
         }
+		  con.release();
 	});
 	    
-		con.release();
+		
 });
 
   app.post('/buyProducts', function(req,res){
@@ -542,9 +544,9 @@ app.post('/updateInfo', function(req,res){
     else{
       res.json({'message':'You are not currently logged in'});
     }
-	
+	con.release();
 	});
-	  con.release();
+	  
   });
 
   app.post('/productsPurchased', function(req,res){
@@ -588,9 +590,9 @@ app.post('/updateInfo', function(req,res){
     else{
       res.json({'message':'You are not currently logged in'});
     }
-	
+	con.release();
 	});
-	  con.release();
+	  
   });
 
   app.post('/getRecommendations',function(req,res){
@@ -620,9 +622,9 @@ app.post('/updateInfo', function(req,res){
     else{
       res.json({'message':'You are not currently logged in'});
     }
-	
+	con.release();
 	});
-	  con.release();
+	  
   });
 
 app.listen(9000, function(){
