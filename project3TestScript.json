@@ -2,7 +2,7 @@
   "config": {
     "target": "http://54.89.169.176:9000",
     "phases": [
-      {"duration": 20, "arrivalCount": 10}
+      {"duration": 10, "arrivalCount": 10}
     ],
     "payload": [
     {
@@ -21,11 +21,14 @@
     {
       "name": "login not registered",
       "flow": [
-
-    {"post": {
-      "url": "/viewProducts",
-      "json": {"keyword":"Sound", "group":"{{group}}"},
-     }
+     {"post": {
+       "url": "/modifyProduct",
+       "json": {"asin":"{{{asin}}}", "productName":"Sound of Music", "productDescription":"{{{productDescription}}}","group":"{{{group}}}"},
+       "match":{
+         "json":"$.message",
+         "value":"Sound of Music was successfully updated"
+       }
+      }
     }
    ] 
   }
