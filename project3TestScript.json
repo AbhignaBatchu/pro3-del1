@@ -30,15 +30,6 @@
           }
          }
        },
-       {"post": {
-         "url": "/registerUser",
-         "json": {"fname":"{{{fname}}}", "lname":"{{lname}}", "address":"{{{address}}}","city":"{{{city}}}","state":"{{{state}}}", "zip":"{{{zip}}}", "email":"{{{email}}}","username":"{{{ username }}}","password":"{{ password }}"},
-         "match":{
-           "json":"$.message",
-           "value":"{{{fname}}} was registered successfully"
-         }
-        }
-      },
       {"post": {
           "url": "/login",
           "json": {"username":"{{{username}}}","password":"{{{password}}}"},
