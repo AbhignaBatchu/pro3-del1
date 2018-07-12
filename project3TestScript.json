@@ -91,7 +91,12 @@
        }
       }
     }
-    
+    ,
+    {"post": {
+      "url": "/viewProducts",
+      "json": {"keyword":"Sound", "group":"{{group}}"},
+     }
+    }
    ] 
   }
   ]
