@@ -32,15 +32,15 @@ var pool = mysql.createPool({
   database: "edissdb2"
 });
 
-/*var con = mysql.createConnection({
+var con = mysql.createConnection({
   host:"mysql-instance1.cejcrxrmql06.us-east-1.rds.amazonaws.com",
   user: "abhignabatchu",
   password: "admin123",
   charset: "utf8mb4",
   database: "edissdb2"
 });
-*/
-/*con.connect(function(err){
+
+con.connect(function(err){
   if(err){
     res.json({'message':'You have connection problem'});
   }
@@ -49,7 +49,7 @@ var pool = mysql.createPool({
   }
 
 });
-*/
+
 app.post('/registerUser', function(req,res){
 
   var fname = req.body.fname;
