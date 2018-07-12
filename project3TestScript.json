@@ -82,12 +82,26 @@
         }
        }
      },
+     {"post": {
+       "url": "/modifyProduct",
+       "json": {"asin":"{{{asin}}}", "productName":"Sound of Music", "productDescription":"{{{productDescription}}}","group":"{{{group}}}"},
+       "match":{
+         "json":"$.message",
+         "value":"Sound of Music was successfully updated"
+       }
+      }
+    },
     {"post": {
       "url": "/viewProducts",
       "json": {"keyword":"Sound", "group":"{{group}}"},
+      "match":{
+        "json":"$.message",
+        "value":"Sound of Music"     }
+     }
      }
     }
      ]
     }
   ]
 }
+
