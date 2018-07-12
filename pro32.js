@@ -533,6 +533,6 @@ app.post('/updateInfo', function(req,res){
     }
   });
 
-app.listen(4000, function(){
-  console.log('Listening to port 4000');
+app.listen(9000, function(){
+  console.log('Listening to port 9000');
 });
