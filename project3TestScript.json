@@ -2,7 +2,7 @@
   "config": {
     "target": "http://54.89.169.176:9000",
     "phases": [
-      {"duration": 20, "arrivalCount": 100}
+      {"duration": 20, "arrivalCount": 20}
     ],
     "payload": [
     {
@@ -90,15 +90,7 @@
          "value":"Sound of Music was successfully updated"
        }
       }
-    },
-    {"post": {
-      "url": "/viewProducts",
-      "json": {"keyword":"Sound", "group":"{{group}}"},
-      "match":{
-        "json":"$.message",
-        "value":"Sound of Music"     }
-     }
-     }
+    }
     
    ] 
   }
