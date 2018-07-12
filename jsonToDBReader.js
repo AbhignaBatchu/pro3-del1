@@ -35,7 +35,7 @@ var sql = wrapper(connection);
 
 var values = ""; //The records read from the file.
 var numRecords = 0; //The current number of records read from the file.
-var recordBlock = 5000; //The number of records to write at once.
+var recordBlock = 511; //The number of records to write at once.
 
 lineReader.eachLine('./projectRecordsJSON.json', function(line, last) {
   execute = false;
