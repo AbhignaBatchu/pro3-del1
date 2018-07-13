@@ -606,7 +606,7 @@ con.release();
 		var check = con.query("select asinb as asin from recom where asina="+iasin+" group by asinb order by count(*) desc limit 5",function(err,rows){
 			if(err || rows.length==0){
 				res.json({'message': "There are no recommendations for that product"});
-				console.log(check);
+				//console.log(check);
 			}
 			else if(rows.length>=1){
 				res.json({'message':'The action was successful','products':rows});
