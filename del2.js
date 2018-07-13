@@ -64,9 +64,7 @@ app.post('/registerUser', function(req,res){
   var role='customer';
 	
 	pool.getConnection(function(err, con) {
-		if(err) {
-		con.destroy();
-		}
+		if(err) throw err;
   
   var check = "select * from reguser where username = ?";
   con.query(check, [username], function(err,rows){
@@ -98,9 +96,7 @@ app.post('/login', function(req,res){
   var username = req.body.username;
 var password = req.body.password;
 pool.getConnection(function(err, con) {
-		if(err) {
-		con.destroy();
-		}
+		if(err) throw err;
 
 con.query("select * from reguser where username=? and password=?",[username,password],function(err, rows){
 
@@ -129,9 +125,7 @@ con.release();
 
 app.post('/logout', function(req,res){
 	pool.getConnection(function(err, con) {
-		if(err) {
-		con.destroy();
-		}
+		if(err) throw err;
   if(req.session.username)
   	{
   		req.session.destroy();
@@ -161,9 +155,7 @@ app.post('/updateInfo', function(req,res){
   var qupdate = "UPDATE reguser SET ";
   
   pool.getConnection(function(err, con) {
-		if(err) {
-		con.destroy();
-		}
+		if(err) throw err;
 
   if(req.session.username){
           if(fname1=='' && lname1=='' && address1=='' && city1=='' && state1=='' && zip1=='' && email1=='' && username1=='' && password1==''){
@@ -237,9 +229,7 @@ con.release();
     app.post('/addProducts', function(req,res){
 
 	pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 		
       if(req.session.username){
         if(req.session.role=="admin"){
@@ -283,9 +273,7 @@ con.release();
     app.post('/modifyProduct', function(req,res){
 		
 		pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 		
     if(req.session.username){
       if(req.session.role=="admin"){
@@ -358,9 +346,7 @@ con.release();
     app.post('/viewUsers', function(req,res){
 		
 		pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 		
       if(req.session.username){
         if(req.session.role=="admin"){
@@ -432,9 +418,7 @@ con.release();
       var keyword = req.body.keyword;
 	  
 	  pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 
       if(id){
         con.query("select asin, productName from products where asin=?",id, function(err,rows){
@@ -485,9 +469,7 @@ con.release();
   app.post('/buyProducts', function(req,res){
 	  
 	  pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 		
     if(req.session.username){
       if(req.session.role=='customer'){
@@ -570,9 +552,7 @@ con.release();
   app.post('/productsPurchased', function(req,res){
 
   pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 
 	  
     if(req.session.username){
@@ -617,9 +597,7 @@ con.release();
 
   app.post('/getRecommendations',function(req,res){
     pool.getConnection(function(err, con) {
-		if(err){
-		con.destroy();
-		}
+		if(err) throw err;
 		
 	if(req.session.username){
      var iasin = req.body.asin;
