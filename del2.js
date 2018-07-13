@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 var pool = mysql.createPool({
-	connectionLimit :1000,
+	connectionLimit :50,
   host:"mysql-instance1.cejcrxrmql06.us-east-1.rds.amazonaws.com",
   user: "abhignabatchu",
   password: "admin123",
