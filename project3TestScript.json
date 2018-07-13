@@ -21,15 +21,6 @@
     {
       "name": "login not registered",
       "flow": [
-        {"post": {
-          "url": "/login",
-          "json": {"username":"{{{ username }}}","password":"{{ password }}"},
-          "match":{
-            "json":"$.message",
-            "value":"There seems to be an issue with the username/password combination that you entered"
-          }
-         }
-       },
       {"post": {
           "url": "/login",
           "json": {"username":"{{{username}}}","password":"{{{password}}}"},
