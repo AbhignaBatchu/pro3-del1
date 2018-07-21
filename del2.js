@@ -1,4 +1,5 @@
 //var queryString = "select product2 as asin from (select product2, count(product2) as recocount from test.orderrelation where product1 = '" + asin + "' group by product2 order by recocount desc limit 5) as tb1";
+//final pro3-del2 code
 'use strict';
 var http = require('http')
 var express = require('express')
