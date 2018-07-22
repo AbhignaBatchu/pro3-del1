@@ -569,7 +569,7 @@ con.release();
           else{
 			  console.log('asc');
 			  //con.query('select products.productName,count(*) as quantity from products join buyprod on products.asin = buyprod.asin where buyprod.customer=?',[iusername],function(err, rows){
-		con.query('select products.productName,count(productName) as quantity from products join buyprod on products.asin = buyprod.asin where buyprod.customer=?',[iusername],function(err, rows){
+		con.query('select productName, count(productName) as quantity from buyprod join products on products.asin = buyprod.asin where buyprod.customer=? group by products.productName',[iusername],function(err, rows){
 				
 		  //con.query('select b.productName as pname, a.asin, count(a.asin) as qty from purchaseHistory a, products_r b where a.user =? and a.asin=b.asin group by a.asin',[iusername],function(err, rows){
 			 if(err || rows.length==0){
