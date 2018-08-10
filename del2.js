@@ -630,7 +630,7 @@ con.release();
 	  
   });
 
-app.get(/ping.html, function(req,res){
+app.get('/ping.html', function(req,res){
 res.send(200);
 res.end();
 });
