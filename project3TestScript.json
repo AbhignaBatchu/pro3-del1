@@ -1,6 +1,6 @@
 {
   "config": {
-    "target": "http://arn:aws:elasticloadbalancing:us-east-1:101084940018:targetgroup/TargetGroup1/d8efdb42d12119be:9000",
+    "target": "http://Node-LB-1780081122.us-east-1.elb.amazonaws.com:9000",
     "phases": [
       {"duration": 120, "arrivalCount": 60}
     ],
