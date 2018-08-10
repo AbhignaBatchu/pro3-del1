@@ -630,6 +630,10 @@ con.release();
 	  
   });
 
+app.get(/ping.html, function(req,res){
+res.send(200);
+res.end();
+});
 app.listen(9000, function(){
   console.log('Listening to port 9000');
 });
