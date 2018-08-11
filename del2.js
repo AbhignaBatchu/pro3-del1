@@ -130,7 +130,7 @@ app.post('/logout', function(req,res){
 		if(err) throw err;
   if(req.session.username)
   	{
-  		req.session.destroy();
+  		req.session=null;
   	    res.json({'message':'You have been successfully logged out'});
   	}
 
