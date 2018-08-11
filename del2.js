@@ -6,7 +6,7 @@ var express = require('express')
 var mysql = require('mysql')
 var session = require('cookie-session')
 var bodyParser = require('body-parser')
-var updateNotifier = require('update-Notifier')
+//var updateNotifier = require('update-Notifier')
 var validator = require('validator')
 var stripchar = require('stripchar').StripChar
 
